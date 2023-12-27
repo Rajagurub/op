@@ -15,7 +15,7 @@ const Emp_login=()=>{
        localStorage.setItem("type","emp" );
      }
     }
-    console.log(dummyObj,"dummyObj")
+    console.log(userData,"dummyObj")
     return(
         <div>
    <form>
