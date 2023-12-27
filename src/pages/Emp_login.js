@@ -11,7 +11,7 @@ const Emp_login=()=>{
      if(dummyObj.name!==""&&dummyObj.pws!==""&&dummyObj.name==="employee1"&&dummyObj.pws==="emp@123"){
        let token= Math.random().toString(36);
        localStorage.setItem("token",token );
-       localStorage.setItem("type",emp );
+       localStorage.setItem("type","emp" );
      }
     }
     console.log(dummyObj,"dummyObj")
