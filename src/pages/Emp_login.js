@@ -1,14 +1,15 @@
 import {Input} from "../components";
+import {useState} from "react"
 const Emp_login=()=>{
-    let dummyObj={name:"",pws:""};
+    const [userData,setUserData]=useState({name:"",pws:""})
     const  onChFun=(val)=>{
-        dummyObj.name=val;
+        setUserData({...userData,name:val});
     }
     const onChfunPws=(val)=>{
-        dummyObj.pws=val;
+        setUserData({...userData,pws:val});
     }
     const submitForm=()=>{
-     if(dummyObj.name!==""&&dummyObj.pws!==""&&dummyObj.name==="employee1"&&dummyObj.pws==="emp@123"){
+     if(userData.name!==""&&userData.pws!==""&&userData.name==="employee1"&&userData.pws==="emp@123"){
        let token= Math.random().toString(36);
        localStorage.setItem("token",token );
        localStorage.setItem("type","emp" );
@@ -19,8 +20,8 @@ const Emp_login=()=>{
         <div>
    <form>
     <h2>{"login Form"}</h2>
-    <Input initVal={dummyObj.name} inputType={"text"} placeHolder={"user name"} handelChangeFun={onChFun} />
-    <Input initVal={dummyObj.pws} inputType={"password"} placeHolder={"password"} handelChangeFun={onChfunPws} />
+    <Input initVal={userData.name} inputType={"text"} placeHolder={"user name"} handelChangeFun={onChFun} />
+    <Input initVal={userData.pws} inputType={"password"} placeHolder={"password"} handelChangeFun={onChfunPws} />
 </form>
 <button onSubmit={submitForm}>{"submit"}</button>
         </div>
